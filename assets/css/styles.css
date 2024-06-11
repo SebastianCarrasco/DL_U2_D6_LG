@@ -1,0 +1,115 @@
+/* Reset de márgenes y paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura que el padding y border se incluyan en el tamaño total de los elementos */
+}
+
+/* Estilos para el contenedor principal utilizando Grid */
+.container {
+    display: grid; /* Establece un contenedor grid */
+    grid-template-areas:
+        'nav nav'
+        'sidebar main'
+        'footer footer'; /* Define las áreas del grid */
+    grid-template-columns: 1fr 3fr; /* Define la proporción de las columnas */
+    grid-template-rows: auto 1fr auto; /* Define la proporción de las filas */
+    min-height: 100vh; /* Altura mínima de la ventana */
+}
+
+/* Menú de navegación */
+.nav {
+    grid-area: nav; /* Asigna esta área al nav */
+    background-color: #25527b;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Barra lateral */
+.sidebar {
+    grid-area: sidebar; /* Asigna esta área al aside */
+    background-color: #f4f4f4;
+    padding: 20px;
+    display: flex;
+    flex-direction: column; /* Utiliza flexbox para alinear los elementos en columna */
+}
+
+.sidebar h2 {
+    margin-bottom: 10px;
+}
+
+.sidebar ul {
+    list-style: none;
+}
+
+.sidebar ul li {
+    margin-bottom: 10px;
+}
+
+/* Grilla de productos */
+.products-grid {
+    grid-area: main; /* Asigna esta área al main */
+    display: grid; /* Establece un contenedor grid */
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Define columnas responsivas */
+    gap: 20px; /* Espaciado entre las tarjetas */
+    padding: 20px;
+}
+
+/* Tarjeta de producto */
+.product-card {
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column; /* Utiliza flexbox para alinear los elementos en columna */
+    align-items: center;
+    text-align: center;
+    min-height: 350px; /* Establece una altura mínima para todas las tarjetas */
+    justify-content: space-between; /* Distribuye el espacio entre los elementos */
+}
+
+.product-card img {
+    width: 150px; /* Ancho fijo para todas las imágenes */
+    height: 150px; /* Altura fija para todas las imágenes */
+    object-fit: cover; /* Asegura que la imagen cubra todo el espacio sin deformarse */
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    color: #333;
+    font-size: 18px;
+    margin: 10px 0 5px 0;
+}
+
+.product-card p {
+    color: #333;
+    font-size: 16px;
+    margin: 5px 0 10px 0;
+}
+
+.buy-button {
+    background-color: #0056b3; /* Color de fondo del botón */
+    color: white; /* Color del texto */
+    border: none; /* Sin borde */
+    padding: 10px 20px; /* Espaciado interno */
+    font-size: 16px; /* Tamaño de la fuente */
+    border-radius: 0; /* Sin bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    width: 100%; /* Botón de ancho completo */
+}
+
+.buy-button:hover {
+    background-color: #004494; /* Color de fondo al pasar el mouse */
+}
+
+/* Pie de página */
+.footer {
+    grid-area: footer; /* Asigna esta área al footer */
+    background-color: #25527b;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
